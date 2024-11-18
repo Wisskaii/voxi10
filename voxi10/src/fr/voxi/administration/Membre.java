@@ -8,8 +8,10 @@ public class Membre extends Utilisateur {
 		super(nom, prenom, email, mdp, etat);
 		this.bloque = bloque;
 	}
-	
-	// Ajouter visuNotif()
+		
+	public void visuNotif(String message){
+		System.out.println(message);
+	}
 		
 	@Override
 	public String toString() {

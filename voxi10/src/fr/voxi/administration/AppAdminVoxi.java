@@ -5,9 +5,11 @@ public class AppAdminVoxi {
 
 	public static void main(String[] args) {
 
-		// Exo 3 // Ajouter visuNotif / Système blocage / refaire 3.
+		// Exo 3
 		
 		//1.
+		
+		System.out.println("Exercice : 1\n");
 		
 		ArrayList<Utilisateur> utilisateurs = new ArrayList<>() ;
 		
@@ -28,6 +30,8 @@ public class AppAdminVoxi {
 		
 		//2.
 		
+		System.out.println("Exercice : 2\n");
+		
 		for(Utilisateur user : utilisateurs){
 			System.out.println("Nom : " + user.getNom() + " Prénom : " + user.getPrenom());
 		}
@@ -36,15 +40,22 @@ public class AppAdminVoxi {
 		
 		//3.
 		
+		System.out.println("Exercice : 3\n");
+		
+		
+		int usersOnline = 0 ;
 		for(Utilisateur user : utilisateurs){
 			if(user.getEtat() == 1){
-				System.out.println(user);
+				usersOnline++ ;
 			}
 		}
+		System.out.println("Il y a " + usersOnline + " utilisateurs connectés");
 		
 		System.out.println("\n");
 		
 		//4.
+		
+		System.out.println("Exercice : 4\n");
 		
 		for(Utilisateur user : utilisateurs){
 			if(user.getEtat() == 1){
@@ -57,6 +68,8 @@ public class AppAdminVoxi {
 		
 		//5.
 		
+		System.out.println("Exercice : 5\n");
+		
 		for(Utilisateur user : utilisateurs){
 			if(user instanceof Moderateur && ((Moderateur)user).getLogin() == "jbreton"){
 				user.seConnecter("jberto", "azerty") ;
@@ -67,6 +80,8 @@ public class AppAdminVoxi {
 		System.out.println("\n");
 		
 		//6.
+		
+		System.out.println("Exercice : 6\n");
 		
 		for(Utilisateur user : utilisateurs){
 			if(user instanceof Membre && user.getEmail() == "s.zaki@gns.fr"){
@@ -79,6 +94,8 @@ public class AppAdminVoxi {
 		
 		//7.
 		
+		System.out.println("Exercice : 7\n");
+		
 		for(Utilisateur user : utilisateurs){
 			if(user instanceof Membre){
 				user.seConnecter(user.getEmail(), user.getMdp()) ;
@@ -90,7 +107,41 @@ public class AppAdminVoxi {
 			}
 		}
 		
-		//8. 
+		System.out.println("\n");
+		
+		//8.
+		
+		System.out.println("Exercice : 8\n");
+		
+		((Moderateur)admin1).debloquer((Membre)user2) ;
+		System.out.println("Le modérateur Jules LEBRETON vient de débloquer le compte de l'auditeur Alexis CAMOIT");
+		System.out.println(user2.seConnecter("a.camoit@gns.fr", "azerty"));
+		
+		System.out.println("\n");
+		
+		//9.
+		
+		System.out.println("Exercice : 9\n");
+		
+		((Moderateur)admin3).bloquer((Membre)user1) ;
+		System.out.println("Le modérateur Hamza ESSAMAMI vient de bloquer le compte de l'auditrice Selma ZAKI") ;
+		System.out.println(user1.seConnecter("s.zaki@gns.fr", "azerty"));
+		
+		System.out.println("\n");
+		
+		//10. 
+		
+		System.out.println("Exercice : 10\n");
+		
+		System.out.println("Nombre d'alertes envoyées par le modérateur Bechir BA : " + ((Moderateur)admin2).getNbAlertesEnvoyees());
+		System.out.println(((Moderateur)admin2).alerter((Membre)user3, "Votre dernier audiobook est limite injurieux"));
+		System.out.println("Nombre d'alertes envoyées par le modérateur Bechir BA : " + ((Moderateur)admin2).getNbAlertesEnvoyees());
+		
+		System.out.println("\n");
+		
+		// Exo 4
+		
+		
 		
 	}
 

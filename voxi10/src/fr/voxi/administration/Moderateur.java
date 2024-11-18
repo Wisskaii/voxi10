@@ -12,6 +12,7 @@ public class Moderateur extends Utilisateur implements Administrateur {
 	}
 
 	public String alerter(Membre membre, String message){
+		membre.visuNotif(message);
 		this.nbAlertesEnvoyees++ ;
 		return "Signalement fait à : " + membre + " Message : " + message ;
 	}

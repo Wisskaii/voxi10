@@ -1,9 +1,7 @@
 package fr.voxi.administration;
 
 public abstract class Utilisateur {
-	
-	// Moyen sûr de ce qu'il se passe par ici donc code à revoir
-	
+		
 	public final int CONNECTE = 1 ;
 	public final int DECONNECTE = 2 ;
 	
@@ -21,15 +19,7 @@ public abstract class Utilisateur {
 		this.etat = etat;
 	}
 
-	public boolean seConnecter(String email, String mdp){
-		if(email == this.email && mdp == this.mdp){
-			this.etat = CONNECTE ;
-			return true ;
-		}
-		else{
-			return false ;
-		}
-	}
+	public abstract boolean seConnecter(String email, String mdp) ;
 	
 	public int seDeconnecter(){
 		return this.etat = DECONNECTE ;
